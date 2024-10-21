@@ -1,0 +1,11 @@
+$bg-color: #FAF0E6;
+$bg-button: #CFCFCF;
+@mixin size($width, $height : $width){
+    width: $width;
+    height: $height;
+}
+@mixin flex-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

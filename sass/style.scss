@@ -1,0 +1,48 @@
+@import 'variable.scss';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    background-color: $bg-color;
+    height: 100vh;
+}
+a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 10px 30px
+}
+.box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &__1{
+        @include flex-box;
+        margin-bottom: 20px;
+        margin-right: -20px;
+        @import './box-1.scss';            
+    }
+    &__2{
+        @include flex-box;
+        margin-bottom: 20px;
+        margin-right: -20px;
+        @import './box-2.scss';            
+    }
+    &__3{
+        @include flex-box;
+        margin-bottom: 20px;
+        margin-right: -20px;
+        @import './box-3.scss';            
+    }
+    &__4{
+        @include flex-box;
+        margin-bottom: 20px;
+        margin-right: -20px;
+        @import './box-4.scss';            
+    }
+}
+

@@ -1,0 +1,108 @@
+@import 'variable.scss';
+
+&__button{
+    border: 2px solid black;
+    margin-right: 20px;
+    &:nth-child(1){
+        border: 2px solid transparent;
+        position: relative;
+        span{
+            display: block;
+            background-color: black;
+            transition: all 0.3s linear;
+            transition: all 0.3s linear;
+        }
+        span:nth-child(1){
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 180%);
+            @include size(105%, 3px);
+        }
+        
+        span:nth-child(2){
+            position: absolute;
+            top: 50%;
+            right: -3%;
+            transform: translate(-180%, -50%);
+            @include size(3px, 100%);
+        }
+
+        span:nth-child(3){
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translate(50%, -180%);
+            @include size(105%, 3px);
+        }
+
+        span:nth-child(4){
+            position: absolute;
+            bottom: 50%;
+            left: -3%;
+            transform: translate(180%, 50%);
+            @include size(3px, 100%);
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1.5);
+            opacity: 0;
+            border: 2px solid black;
+            @include size(100%);
+            transition: all 0.3s linear;
+        }
+        &:hover::before{
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        &:hover span:nth-child(1){
+            transform: translate(-50%, 0);
+        }
+        &:hover span:nth-child(2){
+            transform: translate(0, -50%);
+        }
+        &:hover span:nth-child(3){
+            transform: translate(50%, 0);
+        }
+        &:hover span:nth-child(4){
+            transform: translate(0, 50%);
+        }
+    }
+
+    &:nth-child(2){
+        position: relative;
+        border-radius: 30px;
+        border: 2px solid transparent;
+        &::before,
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 30px;
+            transition: all 0.3s linear;
+        }
+        &::before{
+            border: 2px dashed black;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @include size(100%);
+            opacity: 0;
+        }
+        &::after{
+            border: 2px solid black;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @include size(100%);
+        }
+        &:hover::before{
+            @include size(92%, 80%);
+            opacity: 1;
+        }
+    }
+}
